@@ -1,0 +1,55 @@
+// simple java program for implementing simple currency converter
+import java.util.*;
+interface Conversions{
+    public void dollarToInr();
+    public void euroToInr();
+    public void euroToYen();
+}
+ class Current implements Conversions{
+Scanner n=new Scanner(System.in);
+@Override
+    public void dollarToInr(){
+        System.out.println("enter dollars");
+        double d= n.nextDouble();
+        double r = d*74.56;
+ System.out.println(" dollars to rupees   " +r  +" rupees");
+
+    }
+    
+@Override
+ public void euroToInr(){
+        System.out.println("enter euro");
+        double d= n.nextDouble();
+        double r = d*87.56;
+ System.out.println(" euros to rupees   " +r +"rupees");
+
+    }
+@Override
+   public void euroToYen(){
+        System.out.println("enter euro");
+        double d= n.nextDouble();
+        double r = d*179.12;
+ System.out.println(" euros to yens   " +r +"yen");
+
+    } 
+}
+public class Currency{
+    public static void main(String[] args){
+     Current a =new Current();
+    int n=5;
+    while(n!=0){
+    switch(n){
+    case 1 :    a.dollarToInr();
+                 break;
+     case 2 :   a.euroToInr();
+                break;
+     case 3 :    a.euroToYen();
+                 break;
+        
+    }
+    System.out.println("enter ur option 1:dollar toinr   2:euro to yen   3:euro to yen  0:exit");
+ Scanner j =new Scanner(System.in);
+    n=j.nextInt();
+}}
+
+}
