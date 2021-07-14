@@ -1,0 +1,165 @@
+/* java program 3 different stack operations on 3 stack*/
+import java.util.Scanner;
+
+public class Stackupdate {
+   static int a[]= new int[10];
+     static int d,e,i,j=4,topa=-1,topb=-1,topc=-1,p;
+    static char f,q;
+    static char b[]=new char[10];
+    static double h,r; 
+    static double c[]=new double[10];
+
+   public void display(){
+       System.out.println("enter which stack to display  1:int   2 :char  3:double");        
+       Scanner obj=new Scanner(System.in);          
+       int dis= obj.nextInt();  
+ switch(dis){
+     case 1:      for(i=0;i<=topa;i++){
+            System.out.print(a[i]+"\t"); }
+     case 2:      for(i=0;i<=topb;i++){
+            System.out.print(b[i]+"\t"); }
+     case 3:      for(i=0;i<=topc;i++){
+            System.out.print(c[i]+"\t"); }}}
+  public void pushA( int d){
+                topa++;
+
+         a[topa]=d;
+       System.out.println("the element entered is"+a[topa]);}
+                
+
+     public void pushB( char d){
+          topb++;
+
+         b[topb]=d;
+    System.out.println("the element entered is"+b[topb]);
+
+            
+
+     }
+     public void pushC( double d){
+                 topc++;
+
+         c[topc]=d;
+    System.out.println("the element entered is"+c[topc]);
+
+
+     }
+        public void popA( ){
+           e= a[topa];
+                  System.out.println("the element deleted is"+e);
+
+           topa--;
+        }
+        public void popB( ){
+       f=b[topb];
+               System.out.println("the element deleted is"+f);
+
+       topb--;
+        }
+        public void popC( ){
+           
+            h=c[topc];
+                    System.out.println("the element deleted is"+h);
+topc--;
+            
+            }
+
+     public static void main(String args[]){
+        int y=5
+                ;
+         Stackupdate n =new Stackupdate();
+         while(y!=0){
+            Scanner obj = new Scanner(System.in);
+             System.out.println("enter ur option");
+                 System.out.println("\tto push the int stack      :1\t");
+                 System.out.println("\tto pop the int stack       :2\t");
+                 System.out.println("\tto push the char stack     :3\t");
+                 System.out.println("\tto pop the char stack      :4\t");
+                 System.out.println("\tto push the double stack   :5\t");
+                 System.out.println("\tto pop the double stack    :6\t");
+                 System.out.println("\tto  display the stack    :7\t");
+
+
+            int x= obj.nextInt();  
+         
+        switch(x){
+             case 1 :  
+             if(topa==7)
+         {
+              System.out.println("the stack is full");
+             break;
+         }else{
+                 System.out.println("enter int");        
+                 int mn= obj.nextInt();  
+ 
+                 n.pushA(mn);
+                
+                               break;
+
+             }
+             case 2:
+                 if(topa==-1){
+                           System.out.println("the stack is empty");
+                              break;
+}
+         else{ 
+                     n.popA();
+                      
+                              break;
+}
+             case 3:                 
+
+                 if(topb==7){
+                                   System.out.println("the stack is full");
+             break;
+
+                 }else{System.out.println("enter char");        
+                 char hc=  obj.next().charAt(0);  
+                      n.pushB(hc);
+                 
+             break;
+
+                 }
+             case 4:      
+          if(topb==-1){
+                           System.out.println("the stack is empty");
+                       break;
+}
+         else{ 
+                     n.popB();
+                      
+                       break;
+}
+             case 5:
+             if(topc==7)
+         {
+              System.out.println("the stack is full");
+                          break;
+
+         }else{ System.out.println("enter");        
+                 double mn= obj.nextDouble();  
+                 
+                 n.pushC(mn);
+                 
+                               break;
+
+             }
+             case 6:  
+                 if(topc==-1){
+                           System.out.println("the stack is empty");
+                              break;
+}
+         else{ 
+                      n.popC();
+                      
+                              break;}
+         case 7: n.display();
+  
+         }                              System.out.println("do want to continue");
+                                         y=obj.nextInt();
+
+         }
+         
+         
+     }
+} 
